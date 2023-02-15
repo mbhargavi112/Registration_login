@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import LoginForm from './loginForm';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Regristationform from './registrationForm';
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
 
         <Routes>
 
-          <Route path=''  element={<Regristationform/>}></Route>
-          <Route path='/registration' element={<Regristationform/>}></Route>
-          <Route path='/login' element={<LoginForm/>}></Route>
+          <Route path='/'  element={<Navigate replace to="/registration" />}></Route>
+          <Route path='/registration' element={<Regristationform />}></Route>
+          <Route path='/login' element={<LoginForm />}></Route>
         </Routes>
 
       </BrowserRouter>
